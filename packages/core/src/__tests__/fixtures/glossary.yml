@@ -1,0 +1,12 @@
+- source: "大模型"
+  en: "LLM"
+  ja: "大規模言語モデル"
+  ko: "거대 언어 모델"
+
+- source: "提示词"
+  en: "prompt"
+  ja: "プロンプト"
+
+- source: "智能体"
+  en: "agent"
+  context: "AI agent context"

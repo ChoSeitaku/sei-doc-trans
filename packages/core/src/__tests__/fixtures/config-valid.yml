@@ -1,0 +1,33 @@
+baseline: zh
+targets:
+  - en
+  - ja
+  - ko
+
+include:
+  - README.md
+  - docs/**/*.md
+
+output: docs/{lang}/{path}
+output_readme: README.{lang}.md
+
+provider:
+  name: deepseek
+  model: deepseek-chat
+  api_key_env: DEEPSEEK_API_KEY
+  max_concurrency: 5
+  timeout_ms: 30000
+
+options:
+  chunk_size: 2000
+  glossary_path: .github-global/glossary.yml
+  translate_frontmatter_values:
+    - title
+    - description
+  retry:
+    max_attempts: 3
+    backoff_ms: 1000
+
+cache:
+  path: .github-global/cache.json
+  enabled: true

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.github-global/log/
+.github-global/cache.json
+.env
+*.tsbuildinfo
+.turbo

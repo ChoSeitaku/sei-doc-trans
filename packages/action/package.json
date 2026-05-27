@@ -1,0 +1,21 @@
+{
+  "name": "@github-global/action",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub Action for github-global translation",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "build:ncc": "ncc build src/index.ts -o dist --minify --target es2022",
+    "clean": "rm -rf dist",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@github-global/core": "workspace:*",
+    "@github-global/providers": "workspace:*",
+    "@actions/core": "^1.11.0",
+    "@actions/github": "^6.0.0",
+    "@actions/exec": "^1.1.0"
+  }
+}

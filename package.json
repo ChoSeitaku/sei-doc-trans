@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "github-global-monorepo",
+  "packageManager": "pnpm@10.5.0",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "build:cli": "pnpm --filter github-global run build",
+    "build:action": "pnpm --filter @github-global/action run build:ncc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint packages/",
+    "typecheck": "tsc -b",
+    "clean": "pnpm -r run clean"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.1.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "tsup": "^8.3.0",
+    "@vercel/ncc": "^0.38.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  }
+}

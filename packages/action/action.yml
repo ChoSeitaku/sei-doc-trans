@@ -1,0 +1,27 @@
+name: 'github-global'
+description: 'AI-powered documentation translation for Chinese open source projects'
+author: 'github-global'
+
+inputs:
+  config-path:
+    description: 'Path to the github-global configuration file'
+    required: false
+    default: '.github-global.yml'
+
+  provider:
+    description: 'Override the LLM provider (openai, anthropic, deepseek, qwen, zhipu)'
+    required: false
+
+  only-changed:
+    description: 'Only translate files changed since the last commit'
+    required: false
+    default: 'true'
+
+  fail-on-error:
+    description: 'Fail the job if any file translation fails'
+    required: false
+    default: 'false'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
